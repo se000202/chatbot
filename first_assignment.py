@@ -3,9 +3,10 @@ import streamlit as st
 import openai
 from datetime import datetime
 
+
 # OpenAI API 초기화
 client = openai.OpenAI(
-    api_key="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"
+    api_key=API_KEY
 )
 
 # 세션 상태 초기화 (처음에만)
