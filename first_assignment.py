@@ -3,10 +3,10 @@ import streamlit as st
 import openai
 from datetime import datetime
 
-
+api_key_ = st.secrets["API_KEY"]
 # OpenAI API 초기화
 client = openai.OpenAI(
-    api_key=API_KEY
+    api_key= api_key_
 )
 
 # 세션 상태 초기화 (처음에만)
