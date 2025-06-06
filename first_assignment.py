@@ -32,7 +32,7 @@ if st.button("전송"):
         try:
             # OpenAI API 호출
             response = client.chat.completions.create(
-                model="GPT-3.5-turbo",
+                model="gpt-3.5-turbo",
                 messages=st.session_state.messages
             )
 
