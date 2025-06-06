@@ -11,7 +11,7 @@ api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 
 # Streamlit App title
-st.title("ChatGPT Streamlit Bot 🚀")
+st.title("Chatbot using OpenAI 🚀")
 
 # Initialize chat history in session_state
 if "messages" not in st.session_state:
