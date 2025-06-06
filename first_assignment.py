@@ -1,16 +1,16 @@
 import streamlit as st
-import openai
+from openai import OpenAI
 import os
 from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+api_key = os.getenv("OPENAI_API_KEY")
 
-# 최신 openai 클라이언트 객체 생성
-client = openai.OpenAI()
+# Create OpenAI client with api_key
+client = OpenAI(api_key=api_key)
 
-# Streamlit 앱 제목
+# Streamlit App
 st.title("ChatGPT Streamlit Bot 🚀")
 
 # Initialize chat history
@@ -29,13 +29,12 @@ if prompt := st.chat_input("Say something"):
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # Get ChatGPT response (최신 API 사용!)
+    # Get ChatGPT response
     try:
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=st.session_state.messages
         )
-
         reply = response.choices[0].message.content
 
     except Exception as e:
