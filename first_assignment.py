@@ -16,7 +16,7 @@ if "chat_log" not in st.session_state:
     st.session_state.chat_log = f"\n=== 대화 시작: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ===\n"
 
 # Streamlit UI 구성
-st.title("💬 GPT-4o Chatbot (Streamlit 버전)")
+st.title("💬 GPT-3.5 Chatbot (Streamlit 버전)")
 st.write("아래에 메시지를 입력하세요. 'exit'은 필요 없습니다. 😊")
 
 # 사용자 입력
@@ -31,7 +31,7 @@ if st.button("전송"):
         try:
             # OpenAI API 호출
             response = client.chat.completions.create(
-                model="gpt-4o",
+                model="GPT-3.5-turbo",
                 messages=st.session_state.messages
             )
 
