@@ -3,7 +3,7 @@ import streamlit as st
 import openai
 from datetime import datetime
 
-api_key_ = st.secrets["API_KEY"]
+api_key_ = st.secrets["OPENAI_API_KEY"]
 # OpenAI API 초기화
 client = openai.OpenAI(
     api_key= api_key_
